@@ -4,7 +4,7 @@ var jsonParser = require("body-parser").json;
 
 
 
-var jsonCheck = function(req, res, next){
+var jsonChecker = function(req, res, next){
   if(req.body){
     console.log("The sky is", req.body.color);
   } else {
@@ -13,9 +13,9 @@ var jsonCheck = function(req, res, next){
   next();
 }
 
-app.use(jsonCheck);
+app.use(jsonChecker);
 app.use(jsonParser());
-app.use(jsonCheck);
+app.use(jsonChecker);
 
 //app.use(function(req,res,next){
 //  console.log("First piece of middleware");
